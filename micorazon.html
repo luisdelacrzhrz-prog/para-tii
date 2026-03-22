@@ -56,13 +56,13 @@
 
         .texto-eterno {
     position: absolute;
-    top: 18%;
+    bottom: 18%;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
     color: #8628a3;
     opacity: 0;
-    transition: all 2s ease;
+    transition: all 1.5s ease;
     }
 
         .osito {
@@ -221,6 +221,11 @@
 
                         // ✅ SECUENCIA: CORAZÓN → OSITO → TEXTO EN LOS PIES
                         setTimeout(() => osito.classList.add('visible'), TIEMPOS.esperaOsito);
+                        setTimeout(() => {
+    document.getElementById('texto').classList.add('visible');
+    document.getElementById('eterno').classList.add('visible');
+    document.getElementById('texto-chico').classList.add('visible');
+}, 5500);
                         setTimeout(() => texto.classList.add('visible'), TIEMPOS.esperaOsito + TIEMPOS.esperaTexto);
                     } else {
                         requestAnimationFrame(actualizar);
